@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 
 const avatarSampleVideo =
-  "https://res.cloudinary.com/dowcybzve/video/upload/v1776948978/LISTQIK_Inro_-_V2_ESP_Ver_2_jzrl95.mp4";
+  "Add Video.mp4";
 
 export default function HomePage() {
   const avatarVideoRef = useRef(null);
@@ -82,7 +82,7 @@ export default function HomePage() {
                 <li>
                   <strong>100%</strong> customer satisfaction
                 </li>
-                <li>
+                <li className="heroStatWide">
                   One Entry, Infinite Reach: Instantly publish to 750+ real estate websites including your local MLS, Zillow & Trulia, Realtor.com, Redfin and Homes.com
                 </li>
                 <li className="heroStatHighlight">
@@ -94,18 +94,24 @@ export default function HomePage() {
             <aside className="heroAvatarCard" aria-label="AI assistant preview">
               <p className="avatarKicker">AI listing assistant</p>
               <div className="avatarVideoWrap">
-                <video
-                  ref={avatarVideoRef}
-                  className="avatarVideo"
-                  src={avatarSampleVideo}
-                  autoPlay
-                  loop
-                  muted={avatarMuted}
-                  playsInline
-                  preload="metadata"
-                  onClick={toggleAvatarSound}
-                  aria-label={avatarMuted ? "Tap to unmute video sound" : "Tap to mute video sound"}
-                />
+                {avatarSampleVideo ? (
+                  <video
+                    ref={avatarVideoRef}
+                    className="avatarVideo"
+                    src={avatarSampleVideo}
+                    autoPlay
+                    loop
+                    muted={avatarMuted}
+                    playsInline
+                    preload="metadata"
+                    onClick={toggleAvatarSound}
+                    aria-label={avatarMuted ? "Tap to unmute video sound" : "Tap to mute video sound"}
+                  />
+                ) : (
+                  <div className="avatarVideo avatarPlaceholder" aria-label="Video placeholder">
+                    Add your video URL in `avatarSampleVideo`
+                  </div>
+                )}
               </div>
               
             </aside>

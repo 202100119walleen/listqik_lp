@@ -18,7 +18,7 @@
 
 .topNav {
   position: sticky;
-  top: 0;
+  top: 0.45rem;
   z-index: 100;
   display: flex;
   align-items: center;
@@ -118,7 +118,11 @@
 }
 
 .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 12px;
+  min-height: 44px;
   padding: 0.72rem 1rem;
   font-weight: 700;
   transition:
@@ -147,6 +151,7 @@
 }
 
 .wide {
+  display: flex;
   width: 100%;
 }
 
@@ -198,6 +203,7 @@
 .heroCopy {
   max-width: 54ch;
   margin-top: 1rem;
+  line-height: 1.68;
   color: rgba(255, 255, 255, 0.86);
 }
 
@@ -223,6 +229,7 @@
   border-radius: 999px;
   padding: 0.42rem 0.78rem;
   font-size: 0.86rem;
+  line-height: 1.4;
 }
 
 .heroStats strong {
@@ -237,6 +244,12 @@
 
 .heroStatHighlight strong {
   font-size: 1.05rem;
+}
+
+.heroStatWide {
+  width: 100%;
+  border-radius: 14px;
+  padding: 0.72rem 0.9rem;
 }
 
 .heroAvatarCard {
@@ -277,6 +290,17 @@
   display: block;
   background: #041712;
   cursor: pointer;
+}
+
+.avatarPlaceholder {
+  cursor: default;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+  color: #9fcfbe;
+  font-size: 0.9rem;
 }
 
 .avatarCaption {
@@ -509,9 +533,13 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
+  align-items: stretch;
 }
 
 .pricingCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
   background: #fff;
   border: 1px solid #dbe5f2;
   border-radius: 16px;
@@ -541,20 +569,21 @@
 }
 
 .pricingCard h3 {
-  margin: 0.8rem 0 0;
+  margin: 0.5rem 0 0;
   color: var(--ink-900);
   font-size: 1.45rem;
+  min-height: 2.2rem;
 }
 
 .planCopy {
   color: var(--ink-500);
   font-size: 0.92rem;
-  margin: 0.5rem 0 0;
-  min-height: 2.8rem;
+  margin: 0.2rem 0 0;
+  min-height: 4.2rem;
 }
 
 .planPrice {
-  margin: 1rem 0 0;
+  margin: 0.2rem 0 0;
   color: var(--ink-900);
   font-size: 2.8rem;
   line-height: 1;
@@ -562,19 +591,26 @@
 }
 
 .planSub {
-  margin: 0.4rem 0 1rem;
+  margin: 0.1rem 0 0.2rem;
   color: var(--ink-500);
   font-size: 0.86rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  min-height: 1.3rem;
+}
+
+.pricingCard .btn.wide {
+  margin-top: 0.25rem;
 }
 
 .pricingCard ul {
-  margin: 1rem 0 0;
+  margin: 0.45rem 0 0;
   padding: 0;
   list-style: none;
   display: grid;
   gap: 0.62rem;
+  margin-top: auto;
+  padding-top: 0.9rem;
 }
 
 .pricingCard li {
@@ -810,6 +846,8 @@
 .sellerCta p {
   color: #556580;
   margin-top: 0.5rem;
+  margin-inline: auto;
+  max-width: 58ch;
 }
 
 .sellerCta .heroActions {
@@ -845,6 +883,7 @@
   display: block;
   color: rgba(255, 255, 255, 0.74);
   font-size: 0.9rem;
+  line-height: 1.45;
 }
 
 .footerGrid > div:not(:first-child) a:hover {
@@ -1073,6 +1112,11 @@ input:focus-visible {
 .topNav nav a:hover {
   background: #0d2620;
   color: #c8f3e5;
+}
+
+.heroStatWide {
+  background: rgba(20, 57, 48, 0.58);
+  border-color: rgba(43, 125, 104, 0.64);
 }
 
 .topNav nav {
