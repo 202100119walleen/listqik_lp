@@ -539,7 +539,6 @@
 .pricingCard {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
   background: #fff;
   border: 1px solid #dbe5f2;
   border-radius: 16px;
@@ -600,11 +599,11 @@
 }
 
 .pricingCard .btn.wide {
-  margin-top: 0.25rem;
+  margin-top: 0.5rem;
 }
 
 .pricingCard ul {
-  margin: 0.45rem 0 0;
+  margin: 0;
   padding: 0;
   list-style: none;
   display: grid;
@@ -1115,6 +1114,9 @@ input:focus-visible {
 }
 
 .heroStatWide {
+  width: 100%;
+  border-radius: 14px;
+  padding: 0.72rem 0.9rem;
   background: rgba(20, 57, 48, 0.58);
   border-color: rgba(43, 125, 104, 0.64);
 }
