@@ -197,7 +197,7 @@ export default function HomePage() {
                 Licensed agent support from listing through negotiation and closing.
               </p>
               <p className="planPrice">1%</p>
-              <p className="planSub">At closing</p>
+              <p className="planSub">At closing + $199 fee</p>
               <a href="#seller" className="btn btnSecondary wide">
                 Talk to an agent
               </a>
