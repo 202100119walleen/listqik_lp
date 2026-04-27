@@ -589,6 +589,13 @@
   font-weight: 800;
 }
 
+.planPriceWas {
+  font-size: 1.5rem;
+  color: var(--ink-500);
+  text-decoration: line-through;
+  margin-right: 0.25rem;
+}
+
 .planSub {
   margin: 0.1rem 0 0.2rem;
   color: var(--ink-500);
@@ -851,6 +858,93 @@
 
 .sellerCta .heroActions {
   justify-content: center;
+}
+
+.giftPopupOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(2, 12, 10, 0.7);
+}
+
+.giftPopup {
+  width: min(480px, 100%);
+  position: relative;
+  border-radius: 16px;
+  border: 1px solid #1f4b3f;
+  background: #071611;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+  padding: 1.15rem;
+}
+
+.giftPopupClose {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid #275648;
+  background: #0d2821;
+  color: #c5f4e3;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.giftPopupKicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-size: 0.72rem;
+  color: #8edec2;
+  font-weight: 700;
+}
+
+.giftPopup h3 {
+  margin: 0.35rem 0 0;
+  color: #dcfff1;
+  font-size: clamp(1.3rem, 3.3vw, 1.7rem);
+}
+
+.giftPopup p {
+  margin-top: 0.55rem;
+  color: #9ecfbe;
+}
+
+.giftCoupon {
+  margin-top: 0.7rem;
+  border: 1px dashed #2f725f;
+  border-radius: 10px;
+  background: #0a231c;
+  padding: 0.55rem 0.7rem;
+}
+
+.giftCoupon strong {
+  color: #b7f6dd;
+  letter-spacing: 0.04em;
+}
+
+.claimOfferMini {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 190;
+  border: 1px solid #1f4f41;
+  border-radius: 999px;
+  background: #0f2b23;
+  color: #d4fff0;
+  padding: 0.48rem 0.78rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+}
+
+.claimOfferMini:hover {
+  background: #134035;
 }
 
 .siteFooter {

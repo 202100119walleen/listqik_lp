@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const avatarSampleVideo =
   "Add Video.mp4";
@@ -9,6 +9,8 @@ export default function HomePage() {
   const avatarVideoRef = useRef(null);
   const [avatarMuted, setAvatarMuted] = useState(true);
   const [navOpen, setNavOpen] = useState(false);
+  const [showGiftPopup, setShowGiftPopup] = useState(false);
+  const [offerDismissed, setOfferDismissed] = useState(false);
 
   const toggleAvatarSound = () => {
     const video = avatarVideoRef.current;
@@ -21,6 +23,14 @@ export default function HomePage() {
     }
     setAvatarMuted(nextMuted);
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowGiftPopup(true);
+    }, 1800);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
@@ -139,8 +149,10 @@ export default function HomePage() {
               <p className="planCopy">
                 Everything you need to list on MLS and sell on your terms.
               </p>
-              <p className="planPrice">$99</p>
-              <p className="planSub">$99 / .5%</p>
+              <p className="planPrice">
+                <span className="planPriceWas">$99</span> $79
+              </p>
+              <p className="planSub">$79 / .5%</p>
               <a href="#seller" className="btn btnPrimary wide">
                 Get Subsonic
               </a>
@@ -224,6 +236,53 @@ export default function HomePage() {
           </div>
         </section>
       </main>
+
+      {showGiftPopup ? (
+        <div className="giftPopupOverlay" role="dialog" aria-modal="true" aria-labelledby="gift-popup-title">
+          <div className="giftPopup">
+            <button
+              type="button"
+              className="giftPopupClose"
+              aria-label="Close offer popup"
+              onClick={() => {
+                setShowGiftPopup(false);
+                setOfferDismissed(true);
+              }}
+            >
+              ×
+            </button>
+            <p className="giftPopupKicker">Exclusive bonus</p>
+            <h3 id="gift-popup-title">Get a FREE Gift with your coupon</h3>
+            <p>
+              Get a free gift when you start your listing today.
+            </p>
+            <p className="giftCoupon">Free gift will be applied automatically.</p>
+            <a
+              href="#seller"
+              className="btn btnPrimary wide"
+              onClick={() => {
+                setShowGiftPopup(false);
+                setOfferDismissed(true);
+              }}
+            >
+              Claim offer
+            </a>
+          </div>
+        </div>
+      ) : null}
+
+      {offerDismissed && !showGiftPopup ? (
+        <button
+          type="button"
+          className="claimOfferMini"
+          onClick={() => {
+            setShowGiftPopup(true);
+            setOfferDismissed(false);
+          }}
+        >
+          Claim offer
+        </button>
+      ) : null}
 
       <footer className="siteFooter">
         <div className="footerGrid">
