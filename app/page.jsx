@@ -34,7 +34,7 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Sticky top navigation with high-converting CTAs */}
+      {/* 顶部固定导航 */}
       <header className="topNav">
         <a href="#" className="brand">
           <span className="brandMark">LQ</span>
@@ -43,7 +43,7 @@ export default function HomePage() {
         <button
           type="button"
           className="navToggle"
-          aria-label="Open or close navigation menu"
+          aria-label="打开或关闭导航菜单"
           aria-expanded={navOpen}
           onClick={() => setNavOpen((prev) => !prev)}
         >
@@ -51,18 +51,18 @@ export default function HomePage() {
           <span />
           <span />
         </button>
-        <nav aria-label="Main navigation" className={navOpen ? "open" : ""}>
-          <a href="#compare" onClick={() => setNavOpen(false)}>Pricing</a>
-          <a href="#seller" onClick={() => setNavOpen(false)}>Sell</a>
-          <a href="#compare" onClick={() => setNavOpen(false)}>Compare</a>
-          <a href="#seller" onClick={() => setNavOpen(false)}>Get Started</a>
+        <nav aria-label="主导航" className={navOpen ? "open" : ""}>
+          <a href="#compare" onClick={() => setNavOpen(false)}>价格</a>
+          <a href="#seller" onClick={() => setNavOpen(false)}>卖房</a>
+          <a href="#compare" onClick={() => setNavOpen(false)}>对比</a>
+          <a href="#seller" onClick={() => setNavOpen(false)}>开始使用</a>
         </nav>
         <div className="navActions">
           <a href="#compare" className="btn btnSecondary">
-            View packages
+            查看套餐
           </a>
           <a href="#seller" className="btn btnPrimary">
-            List your home
+            发布房源
           </a>
         </div>
       </header>
@@ -71,38 +71,38 @@ export default function HomePage() {
         <section className="hero">
           <div className="heroInner reveal">
             <div className="heroContent">
-              <p className="eyebrow">Modern real estate platform</p>
-              <h1>List smarter. Sell faster. Close with confidence.</h1>
+              <p className="eyebrow">现代房地产平台</p>
+              <h1>更聪明地挂牌，更快速地成交，更安心地签约。</h1>
               <p className="heroCopy">
-                Premium property presentation, exposure to serious buyers,
-                and local experts who move fast when timing matters.
+                高质量房源展示、精准买家曝光，以及本地专家支持，
+                帮你在关键时机快速推进交易。
               </p>
               <div className="heroActions">
                 <a href="#seller" className="btn btnPrimary">
-                  Start your listing
+                  开始发布
                 </a>
                 <a href="#compare" className="btn btnSecondary">
-                  Compare packages
+                  对比套餐
                 </a>
               </div>
-              <ul className="heroStats" aria-label="Featured metrics">
+              <ul className="heroStats" aria-label="关键指标">
                 <li>
-                  <strong>24h</strong> average response time
+                  <strong>24小时</strong> 平均响应
                 </li>
                 <li>
-                  <strong>100%</strong> customer satisfaction
+                  <strong>100%</strong> 客户满意度
                 </li>
                 <li className="heroStatWide">
-                  One Entry, Infinite Reach: Instantly publish to 750+ real estate websites including your local MLS, Zillow & Trulia, Realtor.com, Redfin and Homes.com
+                  一次发布，全面曝光：可同步至 750+ 房产网站，包括本地 MLS、Zillow、Trulia、Realtor.com、Redfin 与 Homes.com。
                 </li>
                 <li className="heroStatHighlight">
-                  <strong>$9,000</strong> Sellers save an average of $9,000 in commissions
+                  <strong>$9,000</strong> 卖家平均可节省约 9,000 美元佣金
                 </li>
               </ul>
             </div>
 
-            <aside className="heroAvatarCard" aria-label="AI assistant preview">
-              <p className="avatarKicker">Sarah bennet</p>
+            <aside className="heroAvatarCard" aria-label="AI 助手预览">
+              <p className="avatarKicker">Sarah Bennet</p>
               <div className="avatarVideoWrap">
                 {avatarSampleVideo ? (
                   <video
@@ -115,11 +115,11 @@ export default function HomePage() {
                     playsInline
                     preload="metadata"
                     onClick={toggleAvatarSound}
-                    aria-label={avatarMuted ? "Tap to unmute video sound" : "Tap to mute video sound"}
+                    aria-label={avatarMuted ? "点击开启视频声音" : "点击关闭视频声音"}
                   />
                 ) : (
-                  <div className="avatarVideo avatarPlaceholder" aria-label="Video placeholder">
-                    Add your video URL in `avatarSampleVideo`
+                  <div className="avatarVideo avatarPlaceholder" aria-label="视频占位">
+                    请在 `avatarSampleVideo` 中填入视频 URL
                   </div>
                 )}
               </div>
@@ -130,108 +130,106 @@ export default function HomePage() {
 
         <section id="compare" className="section pricing reveal">
           <div className="sectionHeading">
-            <p className="sectionKicker">Pricing plans</p>
-            <h2>Choose how you want to sell</h2>
+            <p className="sectionKicker">价格方案</p>
+            <h2>选择你的售房方式</h2>
             <p>
-              No hidden fees or long contracts, just the tools and real estate
-              support you need to keep more profit.
+              无隐藏费用，无长期绑定，仅提供你真正需要的工具与支持，
+              帮你保留更多利润。
             </p>
           </div>
           <p className="pricingHighlight">
-            Homeowners save an average of $11,785 compared to traditional
-            listing routes.
+            与传统挂牌方式相比，业主平均可节省 11,785 美元。
           </p>
 
           <div className="pricingGrid">
             <article className="pricingCard isPopular">
-              <p className="planBadge">Most popular</p>
+              <p className="planBadge">最受欢迎</p>
               <h3>Subsonic</h3>
               <p className="planCopy">
-                Everything you need to list on MLS and sell on your terms.
+                覆盖 MLS 挂牌核心需求，自主掌控售房节奏。
               </p>
               <p className="planPrice">
                 <span className="planPriceWas">$99</span> $79
               </p>
-              <p className="planSub">$79 / .5%</p>
+              <p className="planSub">$79 / 0.5%</p>
               <a href="#seller" className="btn btnPrimary wide">
-                Get Subsonic
+                选择 Subsonic
               </a>
               <ul>
-                <li>Listed on MLS and major portals</li>
-                <li>Support with all required documentation</li>
-                <li>Unlimited listing changes</li>
-                <li>Showing and inquiry forwarding</li>
+                <li>上线 MLS 与主流房产平台</li>
+                <li>协助处理全部必要文件</li>
+                <li>房源信息不限次数修改</li>
+                <li>带看与咨询统一转发</li>
               </ul>
             </article>
 
             <article className="pricingCard">
-              <p className="planBadge isDark">Growth package</p>
+              <p className="planBadge isDark">进阶套餐</p>
               <h3>Supersonic</h3>
               <p className="planCopy">
-                Stand out with premium content and stronger listing visibility.
+                通过高质量内容与更强展示位，让房源脱颖而出。
               </p>
               <p className="planPrice">$299</p>
-              <p className="planSub">$299 / .3%</p>
+              <p className="planSub">$299 / 0.3%</p>
               <a href="#seller" className="btn btnSecondary wide">
-                Get Supersonic
+                选择 Supersonic
               </a>
               <ul>
-                <li>Everything included in Subsonic</li>
-                <li>Professional photography package</li>
-                <li>Priority listing optimization</li>
-                <li>Expanded social ad reach</li>
+                <li>包含 Subsonic 全部功能</li>
+                <li>专业房产摄影服务</li>
+                <li>优先房源优化</li>
+                <li>扩展社交广告触达</li>
               </ul>
             </article>
 
             <article className="pricingCard">
-              <p className="planBadge isDark">Performance package</p>
+              <p className="planBadge isDark">效果套餐</p>
               <h3>Hypersonic</h3>
               <p className="planCopy">
-                Maximum exposure for high-urgency, high-impact listings.
+                面向高时效、高影响力房源的最大曝光方案。
               </p>
               <p className="planPrice">$599</p>
-              <p className="planSub">$599 / .25%</p>
+              <p className="planSub">$599 / 0.25%</p>
               <a href="#seller" className="btn btnSecondary wide">
-                Get Hypersonic
+                选择 Hypersonic
               </a>
               <ul>
-                <li>Everything included in Supersonic</li>
-                <li>Premium ranking boost</li>
-                <li>Priority seller support workflow</li>
-                <li>Expanded campaign distribution</li>
+                <li>包含 Supersonic 全部功能</li>
+                <li>高级排名加权</li>
+                <li>卖家优先支持流程</li>
+                <li>扩展营销分发</li>
               </ul>
             </article>
 
             <article className="pricingCard">
-              <p className="planBadge isDark">Best value</p>
-              <h3>Full Service</h3>
+              <p className="planBadge isDark">超值推荐</p>
+              <h3>全程服务</h3>
               <p className="planCopy">
-                Licensed agent support from listing through negotiation and closing.
+                持牌经纪人从挂牌到谈判再到成交全流程协助。
               </p>
               <p className="planPrice">1%</p>
-              <p className="planSub">At closing + $199 fee</p>
+              <p className="planSub">成交支付 + $199 服务费</p>
               <a href="#seller" className="btn btnSecondary wide">
-                Talk to an agent
+                联系经纪人
               </a>
               <ul>
-                <li>Dedicated licensed agent</li>
-                <li>Offer review and negotiation support</li>
-                <li>Buyer screening and qualification</li>
-                <li>Pricing strategy to maximize sale value</li>
+                <li>专属持牌经纪人服务</li>
+                <li>报价审核与谈判支持</li>
+                <li>买家筛选与资格核验</li>
+                <li>定价策略优化成交收益</li>
               </ul>
             </article>
           </div>
         </section>
 
         <section id="seller" className="section sellerCta reveal">
-          <h2>Ready to list with confidence?</h2>
+          <h2>准备好更安心地挂牌卖房了吗？</h2>
           <p>
-            Choose your package and launch a listing strategy that attracts
-            high-intent buyers.
+            选择你的方案，立即启动面向高意向买家的挂牌策略。
           </p>
           <div className="heroActions">
             <a href="#compare" className="btn btnPrimary">
-              List now for $99
+              现在发布，$99 起
             </a>
           </div>
         </section>
@@ -243,7 +241,7 @@ export default function HomePage() {
             <button
               type="button"
               className="giftPopupClose"
-              aria-label="Close offer popup"
+              aria-label="关闭优惠弹窗"
               onClick={() => {
                 setShowGiftPopup(false);
                 setOfferDismissed(true);
@@ -251,12 +249,12 @@ export default function HomePage() {
             >
               ×
             </button>
-            <p className="giftPopupKicker">Exclusive bonus</p>
-            <h3 id="gift-popup-title">Get a FREE Gift with your coupon</h3>
+            <p className="giftPopupKicker">限时福利</p>
+            <h3 id="gift-popup-title">使用优惠可获免费礼品</h3>
             <p>
-              Get a free gift when you start your listing today.
+              今天开始发布房源，即可获得免费礼品。
             </p>
-            <p className="giftCoupon">Free gift will be applied automatically.</p>
+            <p className="giftCoupon">免费礼品将在下单时自动添加。</p>
             <a
               href="#seller"
               className="btn btnPrimary wide"
@@ -265,7 +263,7 @@ export default function HomePage() {
                 setOfferDismissed(true);
               }}
             >
-              Claim offer
+              立即领取
             </a>
           </div>
         </div>
@@ -280,7 +278,7 @@ export default function HomePage() {
             setOfferDismissed(false);
           }}
         >
-          Claim offer
+          领取优惠
         </button>
       ) : null}
 
@@ -292,34 +290,34 @@ export default function HomePage() {
               <span>ListQik</span>
             </a>
             <p className="footerBlurb">
-              Fast, modern real estate support designed to help sellers
-              price correctly, attract qualified buyers, and close confidently.
+              快速、现代化的房地产支持服务，帮助卖家合理定价、
+              吸引合格买家并更有把握地完成交易。
             </p>
           </div>
 
           <div>
-            <h4>Company</h4>
-            <a href="#seller">Why ListQik</a>
-            <a href="#compare">Pricing plans</a>
-            <a href="#seller">Get started</a>
+            <h4>公司</h4>
+            <a href="#seller">为什么选择 ListQik</a>
+            <a href="#compare">价格方案</a>
+            <a href="#seller">立即开始</a>
           </div>
 
           <div>
-            <h4>Contact</h4>
+            <h4>联系方式</h4>
             <a href="tel:+18005551234">(800) 555-1234</a>
             <a href="mailto:hello@listqik.com">hello@listqik.com</a>
-            <span>Mon-Fri, 9:00 AM - 6:00 PM</span>
+            <span>周一至周五，上午 9:00 - 下午 6:00</span>
           </div>
         </div>
 
         <div className="footerBottom">
           <p>
-            © {new Date().getFullYear()} ListQik. All rights reserved.
+            © {new Date().getFullYear()} ListQik. 保留所有权利。
           </p>
           <div className="footerLegal">
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
-            <a href="#">Fair housing</a>
+            <a href="#">隐私政策</a>
+            <a href="#">服务条款</a>
+            <a href="#">公平住房</a>
           </div>
         </div>
       </footer>
