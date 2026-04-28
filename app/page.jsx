@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const avatarSampleVideo =
-  "Add Video.mp4";
+  "https://res.cloudinary.com/dowcybzve/video/upload/v1776868318/avatar_2_ekxnl4.mp4";
 
 export default function HomePage() {
   const avatarVideoRef = useRef(null);
@@ -102,7 +102,7 @@ export default function HomePage() {
             </div>
 
             <aside className="heroAvatarCard" aria-label="AI assistant preview">
-              <p className="avatarKicker">AI listing assistant</p>
+              <p className="avatarKicker">Sarah bennet</p>
               <div className="avatarVideoWrap">
                 {avatarSampleVideo ? (
                   <video
